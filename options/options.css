@@ -1,0 +1,129 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  margin: 0 0 0.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0 0 0.75rem;
+}
+
+.hint a {
+  color: #0060df;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+input[type="password"],
+input[type="text"] {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: monospace;
+  background: #fff;
+}
+
+input:focus {
+  outline: 2px solid #0060df;
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+#save {
+  align-self: flex-start;
+  background: #0060df;
+  color: #fff;
+  border-color: #0060df;
+  font-weight: 600;
+}
+
+#save:hover {
+  background: #0050be;
+}
+
+#status {
+  min-height: 1.25rem;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+#status.success { color: #058b00; }
+#status.error   { color: #d70022; }
+
+.privacy-notice {
+  border: 1px solid #e8c850;
+  background: #fffbe6;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  color: #3d3000;
+}
+
+.privacy-notice p {
+  margin: 0;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lovable Prompt Helper — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>Lovable Prompt Helper</h1>
+
+    <section class="field-group">
+      <label for="api-key">Gemini API Key</label>
+      <p class="hint">
+        Get a free key at
+        <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>.
+        Paste it once — it stays on your device only.
+      </p>
+      <div class="input-row">
+        <input
+          type="password"
+          id="api-key"
+          placeholder="AIza..."
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <button type="button" id="toggle-visibility" aria-label="Show or hide API key">Show</button>
+      </div>
+      <button type="button" id="save">Save</button>
+      <p id="status" aria-live="polite"></p>
+    </section>
+
+    <section class="privacy-notice">
+      <h2>Privacy notice</h2>
+      <p>
+        This extension sends your prompts to Google's Gemini API. On the
+        <strong>free tier, Google may use your inputs to improve their models.</strong>
+        If this concerns you, use a paid API tier or do not use this extension.
+        This extension itself collects no data and makes no calls beyond Gemini.
+      </p>
+    </section>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

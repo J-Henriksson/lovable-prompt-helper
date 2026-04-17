@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lovable Prompt Helper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <span class="logo">✨ Lovable Prompt Helper</span>
+  </header>
+
+  <main>
+    <label for="idea">Rough idea</label>
+    <textarea id="idea" placeholder="e.g. a habit tracker for teams" rows="3"></textarea>
+
+    <button type="button" id="enhance">✨ Enhance</button>
+
+    <div id="output-area" hidden>
+      <label for="result">Refined prompt</label>
+      <textarea id="result" readonly rows="12"></textarea>
+      <button type="button" id="copy">Copy</button>
+      <span id="copy-status" aria-live="polite"></span>
+    </div>
+
+    <p id="error" class="error" aria-live="polite" hidden></p>
+  </main>
+
+  <footer>
+    <button type="button" id="open-settings">Settings</button>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
