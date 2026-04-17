@@ -3,12 +3,17 @@ const enhanceBtn = document.getElementById('enhance');
 const outputArea = document.getElementById('output-area');
 const resultEl = document.getElementById('result');
 const copyBtn = document.getElementById('copy');
+const copyText = document.getElementById('copy-text');
 const copyStatus = document.getElementById('copy-status');
 const errorEl = document.getElementById('error');
 const settingsBtn = document.getElementById('open-settings');
 
-settingsBtn.addEventListener('click', () => {
-  browser.runtime.openOptionsPage();
+settingsBtn.addEventListener('click', () => browser.runtime.openOptionsPage());
+
+// Auto-grow textarea
+ideaEl.addEventListener('input', () => {
+  ideaEl.style.height = 'auto';
+  ideaEl.style.height = ideaEl.scrollHeight + 'px';
 });
 
 enhanceBtn.addEventListener('click', async () => {
@@ -26,16 +31,15 @@ enhanceBtn.addEventListener('click', async () => {
   if (response.error) {
     showError(response.error);
   } else {
-    resultEl.value = response.result;
+    resultEl.textContent = response.result;
     outputArea.hidden = false;
-    copyStatus.textContent = '';
   }
 });
 
 copyBtn.addEventListener('click', async () => {
-  await navigator.clipboard.writeText(resultEl.value);
-  copyStatus.textContent = 'Copied!';
-  setTimeout(() => { copyStatus.textContent = ''; }, 2000);
+  await navigator.clipboard.writeText(resultEl.textContent);
+  copyText.textContent = '✓ Copied';
+  setTimeout(() => { copyText.textContent = 'Copy'; }, 2000);
 });
 
 function setLoading(on) {
@@ -50,5 +54,4 @@ function showError(msg) {
 
 function hideError() {
   errorEl.hidden = true;
-  errorEl.textContent = '';
 }
