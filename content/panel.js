@@ -15,8 +15,8 @@ function openPanel(inputEl) {
       <button class="lph-close" aria-label="Close">&#x2715;</button>
     </div>
     <div class="lph-body">
-      <textarea class="lph-idea" placeholder="Describe your app idea…" rows="3"></textarea>
-      <button class="lph-btn-enhance" type="button">Enhance</button>
+      <textarea class="lph-idea" placeholder="What would you like to build…" rows="3"></textarea>
+      <button class="lph-btn-enhance" type="button">Get Prompt</button>
       <div class="lph-result-wrap" hidden>
         <div class="lph-result-label">Refined prompt</div>
         <div class="lph-result"></div>
@@ -48,14 +48,14 @@ function openPanel(inputEl) {
     if (!idea) return;
 
     enhanceBtn.disabled = true;
-    enhanceBtn.textContent = 'Enhancing…';
+    enhanceBtn.textContent = 'Generating…';
     resultWrap.hidden = true;
     errorEl.hidden = true;
 
     const response = await browser.runtime.sendMessage({ type: 'enhance', idea });
 
     enhanceBtn.disabled = false;
-    enhanceBtn.textContent = 'Enhance';
+    enhanceBtn.textContent = 'Get Prompt';
 
     if (response.error) {
       errorEl.textContent = response.error;

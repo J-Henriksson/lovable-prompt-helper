@@ -5,8 +5,7 @@
   "description": "Enhances rough ideas into well-structured Lovable.dev prompts using Gemini.",
   "permissions": ["storage"],
   "host_permissions": [
-    "https://generativelanguage.googleapis.com/*",
-    "https://lovable.dev/*"
+    "https://generativelanguage.googleapis.com/*"
   ],
   "content_scripts": [{
     "matches": ["https://lovable.dev/*"],
