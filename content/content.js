@@ -68,5 +68,13 @@ function setupObserver() {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'E') {
+    e.preventDefault();
+    const input = findPromptInput();
+    if (input) openPanel(input);
+  }
+});
+
 tryInject();
 setupObserver();
