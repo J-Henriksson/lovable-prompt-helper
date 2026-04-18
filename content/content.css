@@ -1,0 +1,199 @@
+/* All selectors prefixed lph- to avoid collisions with Lovable's styles */
+
+.lph-enhance-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 2rem;
+  padding: 0 0.625rem;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #6c2bd9, #9b59f5);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s, transform 0.1s;
+  line-height: 1;
+}
+
+.lph-enhance-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.lph-enhance-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Panel ───────────────────────────────────── */
+
+.lph-panel {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(540px, calc(100vw - 2rem));
+  z-index: 99999;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  overflow: hidden;
+  animation: lph-slide-up 0.2s ease;
+}
+
+@keyframes lph-slide-up {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.lph-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.875rem;
+  background: linear-gradient(135deg, #1a0533, #2d0a5e);
+  color: #fff;
+}
+
+.lph-title {
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+.lph-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.2rem;
+  transition: color 0.15s;
+  font-family: inherit;
+}
+
+.lph-close:hover { color: #fff; }
+
+.lph-body {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lph-idea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  resize: vertical;
+  color: #111;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.lph-idea:focus { border-color: #7c3aed; }
+
+.lph-btn-enhance {
+  align-self: flex-start;
+  padding: 0.45rem 1rem;
+  border: none;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #6c2bd9, #9b59f5);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.lph-btn-enhance:hover:not(:disabled) { opacity: 0.88; }
+.lph-btn-enhance:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.lph-result-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  animation: lph-fade-in 0.2s ease;
+}
+
+@keyframes lph-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lph-result-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #888;
+}
+
+.lph-result {
+  padding: 0.6rem 0.75rem;
+  background: #f7f4ff;
+  border: 1px solid #e5d9ff;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow-y: auto;
+  color: #1a1a1a;
+}
+
+.lph-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lph-btn-accept {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 7px;
+  background: #6c2bd9;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.lph-btn-accept:hover { opacity: 0.88; }
+
+.lph-btn-cancel {
+  padding: 0.4rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  background: #fff;
+  color: #555;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.lph-btn-cancel:hover { background: #f5f5f5; }
+
+.lph-error {
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+  background: #fff1f2;
+  border: 1px solid #fecdcd;
+  border-radius: 7px;
+  color: #c0152a;
+  font-size: 0.82rem;
+}

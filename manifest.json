@@ -5,8 +5,15 @@
   "description": "Enhances rough ideas into well-structured Lovable.dev prompts using Gemini.",
   "permissions": ["storage"],
   "host_permissions": [
-    "https://generativelanguage.googleapis.com/*"
+    "https://generativelanguage.googleapis.com/*",
+    "https://lovable.dev/*"
   ],
+  "content_scripts": [{
+    "matches": ["https://lovable.dev/*"],
+    "js": ["content/panel.js", "content/content.js"],
+    "css": ["content/content.css"],
+    "run_at": "document_idle"
+  }],
   "action": {
     "default_title": "Lovable Prompt Helper",
     "default_popup": "popup/popup.html"

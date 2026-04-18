@@ -44,7 +44,7 @@ copyBtn.addEventListener('click', async () => {
 
 function setLoading(on) {
   enhanceBtn.disabled = on;
-  enhanceBtn.textContent = on ? 'Enhancing…' : '✨ Enhance';
+  enhanceBtn.textContent = on ? 'Enhancing…' : 'Enhance';
 }
 
 function showError(msg) {
