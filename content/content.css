@@ -7,7 +7,7 @@
   padding: 0 0.75rem;
   border: none;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  background: none;
   color: #fff;
   font-size: 0.75rem;
   font-weight: 600;
@@ -16,7 +16,25 @@
   white-space: nowrap;
   transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
   line-height: 1;
-  box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.lph-enhance-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  background: linear-gradient(135deg, #6d28d9, #7c3aed, #38bdf8, #818cf8, #38bdf8, #7c3aed, #6d28d9);
+  z-index: -1;
+  animation: lph-btn-flow 3s linear infinite;
+  will-change: transform;
+}
+
+@keyframes lph-btn-flow {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .lph-enhance-btn:hover {
