@@ -159,6 +159,27 @@
   box-shadow: none;
 }
 
+.lph-loading {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.lph-loading-bar {
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, #a855f7, #7c3aed, transparent);
+  border-radius: 9999px;
+  animation: lph-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes lph-shimmer {
+  0%   { transform: translateX(-150%); }
+  100% { transform: translateX(350%); }
+}
+
 .lph-result-wrap {
   display: flex;
   flex-direction: column;

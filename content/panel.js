@@ -17,6 +17,7 @@ function openPanel(inputEl) {
     <div class="lph-body">
       <textarea class="lph-idea" placeholder="What would you like to build…" rows="3"></textarea>
       <button class="lph-btn-enhance" type="button">Get Prompt</button>
+      <div class="lph-loading" hidden><div class="lph-loading-bar"></div></div>
       <div class="lph-result-wrap" hidden>
         <div class="lph-result-label">Refined prompt</div>
         <div class="lph-result"></div>
@@ -36,6 +37,7 @@ function openPanel(inputEl) {
   const resultWrap = panelEl.querySelector('.lph-result-wrap');
   const resultEl   = panelEl.querySelector('.lph-result');
   const errorEl    = panelEl.querySelector('.lph-error');
+  const loadingEl  = panelEl.querySelector('.lph-loading');
   const acceptBtn  = panelEl.querySelector('.lph-btn-accept');
 
   ideaEl.value = currentText;
@@ -51,9 +53,11 @@ function openPanel(inputEl) {
     enhanceBtn.textContent = 'Generating…';
     resultWrap.hidden = true;
     errorEl.hidden = true;
+    loadingEl.hidden = false;
 
     const response = await browser.runtime.sendMessage({ type: 'enhance', idea });
 
+    loadingEl.hidden = true;
     enhanceBtn.disabled = false;
     enhanceBtn.textContent = 'Get Prompt';
 
@@ -69,6 +73,13 @@ function openPanel(inputEl) {
   acceptBtn.addEventListener('click', () => {
     writeToEditor(targetInput, resultEl.textContent);
     closePanel();
+  });
+
+  ideaEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      enhanceBtn.click();
+    }
   });
 
   ideaEl.focus();
