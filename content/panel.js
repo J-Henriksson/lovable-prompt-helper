@@ -20,7 +20,7 @@ function openPanel(inputEl) {
       <div class="lph-loading" hidden><div class="lph-loading-bar"></div></div>
       <div class="lph-result-wrap" hidden>
         <div class="lph-result-label">Refined prompt</div>
-        <div class="lph-result"></div>
+        <div class="lph-result" contenteditable="true" spellcheck="false"></div>
         <div class="lph-actions">
           <button class="lph-btn-accept" type="button">Accept</button>
           <button class="lph-btn-cancel" type="button">Cancel</button>

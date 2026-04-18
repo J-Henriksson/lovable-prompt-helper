@@ -218,6 +218,12 @@
   color: rgba(255,255,255,0.3);
 }
 
+.lph-result:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(139, 92, 246, 0.11);
+}
+
 .lph-result {
   padding: 0.75rem 0.875rem;
   background: rgba(139, 92, 246, 0.07);
