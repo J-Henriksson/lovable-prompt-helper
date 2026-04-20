@@ -3,7 +3,7 @@
   "name": "Lovable Prompt Helper",
   "version": "0.1.0",
   "description": "Enhances rough ideas into well-structured Lovable.dev prompts using Gemini.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
   "host_permissions": [
     "https://generativelanguage.googleapis.com/*"
   ],
