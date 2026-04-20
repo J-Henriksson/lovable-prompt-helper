@@ -16,12 +16,15 @@ browser.runtime.onMessage.addListener((message) => {
   if (message.type === 'enhance') {
     return handleEnhance(message.idea);
   }
+  if (message.type === 'open-options') {
+    browser.runtime.openOptionsPage();
+  }
 });
 
 async function handleEnhance(idea) {
   const apiKey = await getApiKey();
   if (!apiKey) {
-    return { error: 'No API key saved. Open Settings and paste your Gemini key.' };
+    return { error: 'NO_KEY' };
   }
   try {
     const result = await enhance(idea, apiKey);

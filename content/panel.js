@@ -62,7 +62,14 @@ function openPanel(inputEl) {
     enhanceBtn.textContent = 'Get Prompt';
 
     if (response.error) {
-      errorEl.textContent = response.error;
+      if (response.error === 'NO_KEY') {
+        errorEl.innerHTML = 'No API key saved. <button class="lph-btn-settings">Open Settings</button>';
+        errorEl.querySelector('.lph-btn-settings').addEventListener('click', () => {
+          browser.runtime.sendMessage({ type: 'open-options' });
+        });
+      } else {
+        errorEl.textContent = response.error;
+      }
       errorEl.hidden = false;
     } else {
       resultEl.textContent = response.result;
