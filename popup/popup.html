@@ -13,25 +13,10 @@
   </header>
 
   <main>
-    <div class="input-card">
-      <textarea id="idea" placeholder="Describe your app idea…" rows="2"></textarea>
-      <button type="button" id="enhance">Enhance</button>
-    </div>
-
-    <div id="output-area" class="output-card" hidden>
-      <div class="output-header">
-        <span class="output-label">Refined prompt</span>
-        <button type="button" id="copy">
-          <span id="copy-text">Copy</span>
-          <span id="copy-status" aria-live="polite"></span>
-        </button>
-      </div>
-      <div id="result"></div>
-    </div>
-
-    <p id="error" class="error" aria-live="polite" hidden></p>
+    <p class="hint">The <strong>✨ Enhance</strong> button lives inside Lovable's prompt input. Head there to use it.</p>
+    <button type="button" id="open-lovable">Open Lovable.dev</button>
   </main>
 
-  <script type="module" src="popup.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
