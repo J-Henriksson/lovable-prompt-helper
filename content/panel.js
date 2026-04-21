@@ -111,4 +111,10 @@ function writeToEditor(el, text) {
   el.focus();
   document.execCommand('selectAll');
   document.execCommand('insertText', false, text);
+  const range = document.createRange();
+  range.setStart(el, 0);
+  range.collapse(true);
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
 }
