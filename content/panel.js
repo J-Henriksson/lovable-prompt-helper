@@ -91,6 +91,14 @@ function openPanel(inputEl) {
 
   ideaEl.focus();
   ideaEl.setSelectionRange(ideaEl.value.length, ideaEl.value.length);
+
+  const onOutsideClick = (e) => {
+    if (!panelEl?.contains(e.target)) {
+      closePanel();
+      document.removeEventListener('mousedown', onOutsideClick, true);
+    }
+  };
+  document.addEventListener('mousedown', onOutsideClick, true);
 }
 
 function closePanel() {
