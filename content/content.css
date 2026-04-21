@@ -296,3 +296,16 @@
   color: #fca5a5;
   font-size: 0.82rem;
 }
+
+.lph-btn-settings {
+  background: none;
+  border: none;
+  color: #f0abfc;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

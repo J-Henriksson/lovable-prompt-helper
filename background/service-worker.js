@@ -33,6 +33,9 @@ async function handleEnhance(idea) {
     if (err instanceof GeminiError && err.status === 429) {
       return { error: "You're going fast — wait a minute and try again." };
     }
+    if (err instanceof GeminiError && err.status === 503) {
+      return { error: "Gemini is temporarily unavailable — try again in a few minutes." };
+    }
     return { error: err.message ?? 'Something went wrong. Check the browser console.' };
   }
 }
