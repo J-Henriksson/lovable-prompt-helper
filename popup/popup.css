@@ -34,13 +34,13 @@ header {
 #open-settings {
   background: none;
   border: none;
-  color: rgba(255,255,255,0.3);
+  color: #fff;
   font-size: 1rem;
   cursor: pointer;
   padding: 0.2rem;
   line-height: 1;
   border-radius: 4px;
-  transition: color 0.15s, background 0.15s;
+  transition: color 0.15s, transform 0.1s, box-shadow 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,8 +49,8 @@ header {
 }
 
 #open-settings:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.45);
 }
 
 main {

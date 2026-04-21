@@ -8,10 +8,6 @@ browser.runtime.onInstalled.addListener(async () => {
   }
 });
 
-browser.action.onClicked.addListener(() => {
-  browser.runtime.openOptionsPage();
-});
-
 browser.runtime.onMessage.addListener((message) => {
   if (message.type === 'enhance') {
     return handleEnhance(message.idea);
