@@ -96,9 +96,18 @@ function openPanel(inputEl) {
     if (!panelEl?.contains(e.target)) {
       closePanel();
       document.removeEventListener('mousedown', onOutsideClick, true);
+      document.removeEventListener('keydown', onEscape, true);
+    }
+  };
+  const onEscape = (e) => {
+    if (e.key === 'Escape') {
+      closePanel();
+      document.removeEventListener('mousedown', onOutsideClick, true);
+      document.removeEventListener('keydown', onEscape, true);
     }
   };
   document.addEventListener('mousedown', onOutsideClick, true);
+  document.addEventListener('keydown', onEscape, true);
 }
 
 function closePanel() {
