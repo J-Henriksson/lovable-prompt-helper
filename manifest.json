@@ -36,6 +36,9 @@
     "page": "options/options.html",
     "open_in_tab": true
   },
+  "data_collection_permissions": {
+    "collects_personally_identifying_information": false
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "lovable-prompt-helper@j-henriksson",
