@@ -27,7 +27,10 @@ async function handleEnhance(idea) {
     return { result };
   } catch (err) {
     if (err instanceof GeminiError && err.status === 429) {
-      return { error: "You're going fast — wait a minute and try again." };
+      const daily = /daily|per.?day|quota/i.test(err.message);
+      return { error: daily
+        ? "You've hit the daily Gemini quota (250 requests/day on the free tier). Try again tomorrow or upgrade your key at aistudio.google.com."
+        : "You're going fast — wait a minute and try again." };
     }
     if (err instanceof GeminiError && err.status === 503) {
       return { error: "Gemini is temporarily unavailable — try again in a few minutes." };
