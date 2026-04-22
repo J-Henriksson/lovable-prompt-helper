@@ -5,6 +5,8 @@ A Firefox extension that turns rough ideas into well-structured [Lovable.dev](ht
 
 Type "a habit tracker" and get back a prompt with a feature breakdown, stack hints, visual direction, data model, and edge cases. Far more detailed than anything you'd write by hand and ready to accept and send straight to Lovable.
 
+![](assets/demo.gif)
+
 ## Usage
 
 1. Go to [lovable.dev](https://lovable.dev)
